@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Button } from "../ui/button/button";
 import Circle from "../Circle";
 import CircleGame from "../CircleGame";
-import { COLORS, getRandomColor, getRandomPosition, getRandomSize } from "../../lib/constants";
+import { getRandomColor, getRandomPosition, getRandomSize } from "../../lib/constants";
 
 
 
@@ -36,7 +36,7 @@ const HomePage = () => {
       {decorativeCircles.map((circle) => (
         <Circle
           key={circle.id}
-          id={circle.id}
+          
           x={circle.x}
           y={circle.y}
           size={circle.size}

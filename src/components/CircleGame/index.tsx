@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import Circle from "../Circle";
 import {
@@ -30,7 +30,7 @@ export default function CircleGame() {
   const [spawnedCircles, setSpawnedCircles] = useState(0);
   const [gameActive, setGameActive] = useState(false);
 
-  function createNewCircle() {
+  const createNewCircle = useCallback(() => {
     if (gameOver) return;
 
     const newCircle: GameCircle = {
@@ -46,12 +46,12 @@ export default function CircleGame() {
       setCircle(null);
       createNewCircle();
     }, 5000);
-  }
+  }, [gameOver]);
 
   useEffect(() => {
     if (!gameActive) return;
     createNewCircle();
-  }, [gameActive]);
+  }, [gameActive, createNewCircle]);
 
   useEffect(() => {
     if (!gameActive) return;
