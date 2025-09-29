@@ -23,7 +23,7 @@ export default function CircleGame() {
   const [clickData, setClickData] = useState<
     { timestamp: number; accuracy: number }[]
   >([]);
-  const [timeLeft, setTimeLeft] = useState(10);
+  const [timeLeft, setTimeLeft] = useState(60);
   const [gameStart, setGameStart] = useState<number | null>(null);
   const [gameOver, setGameOver] = useState(false);
   const timeOutRef = useRef<NodeJS.Timeout | null>(null);
@@ -45,7 +45,7 @@ export default function CircleGame() {
     timeOutRef.current = setTimeout(() => {
       setCircle(null);
       createNewCircle();
-    }, 5000);
+    }, 2000);
   }, [gameOver]);
 
   useEffect(() => {
