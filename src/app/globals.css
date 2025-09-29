@@ -126,7 +126,7 @@
 }
 
 .animate-shrink {
-  animation: shrink 5s linear forwards;
+  animation: shrink 2s linear forwards;
 }
 
 /* Base styles */
