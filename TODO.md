@@ -1,0 +1,2 @@
+- [x] Update postcss.config.mjs to use object-based plugins format
+- [ ] Run Storybook to verify the fix
